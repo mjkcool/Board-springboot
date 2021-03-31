@@ -17,7 +17,8 @@ public class BoardController {
 	@Autowired
 	private BoardService boardService;
 	
-	@RequestMapping("/getBoardList")
+	
+	@RequestMapping(value= {"/", "/getBoardList"})
 	public String getBoardList(Model model, Board board) {
 		List<Board> boardList = boardService.getBoardList(board);
 	
@@ -32,6 +33,7 @@ public class BoardController {
 	
 	@PostMapping("/insertBoard")
 	public String insertBoard(Board board) {
+		board.setCnt(0L);
 		boardService.insertBoard(board);
 		return "redirect:getBoardList";
 	}

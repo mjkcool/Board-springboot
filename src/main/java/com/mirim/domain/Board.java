@@ -25,6 +25,6 @@ public class Board {
 	private String content;
 	@Column(insertable = false, updatable = false, columnDefinition = "date default sysdate")
 	private Date createDate;
-	@Column(insertable = false, columnDefinition = "number default 0")
+	
 	private Long cnt; //조회수
 }

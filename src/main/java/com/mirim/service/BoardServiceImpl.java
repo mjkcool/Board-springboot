@@ -20,10 +20,12 @@ public class BoardServiceImpl implements BoardService {
 	
 	public void insertBoard(Board board) {
 		boardRepo.save(board);
-
 	}
 	
 	public Board getBoard(Board board) {
+		Board findBoard = boardRepo.findById(board.getSeq()).get();
+		findBoard.setCnt(findBoard.getCnt()+1L);
+		boardRepo.save(findBoard);
 		return boardRepo.findById(board.getSeq()).get();
 	}
 	
