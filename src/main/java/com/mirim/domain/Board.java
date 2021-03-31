@@ -22,7 +22,6 @@ public class Board {
 	private String title;
 	@Column(updatable=false)
 	private String writer;
-	
 	private String content;
 	@Column(insertable = false, updatable = false, columnDefinition = "date default sysdate")
 	private Date createDate;
